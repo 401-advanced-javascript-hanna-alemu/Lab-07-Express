@@ -18,14 +18,19 @@ router.get('/categories', (req, res, next) => {
 });
 
 // Route to Create a Category
-
+// @param{req}
+/**
+ * @param{req}
+ * @param{res}
+ * @param{next}
+ */
 router.post('/categories', (req, res, next) => {
   let record = req.body;
   record.id = Math.random();
   res.json(record);
-  if(req.valid === true) {
+  if (req.valid === true) {
     db.push(record);
-  }else {
+  } else {
     error500();
   }
   next();
